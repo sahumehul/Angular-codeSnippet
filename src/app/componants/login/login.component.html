@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="wrapper">
+    <form [formGroup]="loginForm" class="login">
+        <h1>Login</h1>
+        <div class="input">
+            <input type="text" [formControl]="email" placeholder="Enter email">
+            <p class="error-red" [hidden]= "email.valid || email.untouched">Enter valid Email</p>
+            <input type="password" [formControl]="password" placeholder="Enter password">
+            <p class="error-red" [hidden] = "password.valid || password.untouched">Enter valid password</p>
+        </div>
+        <div class="btns">
+            <button (click)="loginBtn()" [disabled]="loginForm.invalid">Login</button>
+            <button (click)="reset()">Reset</button>
+        </div>
+    </form>
+</div>
+

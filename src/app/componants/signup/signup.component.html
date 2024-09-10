@@ -1,1 +1,32 @@
-<p>signup works!</p>
+<div class="wrapper">
+  <form class="signup" #registerForm="ngForm">
+    <h1>Sign Up</h1>
+    <div class="input">
+      <input
+        type="text"
+        placeholder="Enter email"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        required
+        ngModel
+        name="email"
+        #email="ngModel"
+      />
+      <p class="error-red" [hidden]="email.valid || email.untouched">
+        Enter valid Email
+      </p>
+      <input type="password" placeholder="Enter password" 
+      required
+      ngModel
+      name="password"
+      #password="ngModel" minlength="6"/>
+      <p class="error-red"
+      [hidden]="password.valid || password.untouched">
+        Enter valid password
+      </p>
+    </div>
+    <div class="btns">
+      <button (click)="register(registerForm)" [disabled]="registerForm.invalid">Sign Up</button>
+      <button (click)="reset(registerForm)">Reset</button>
+    </div>
+  </form>
+</div>

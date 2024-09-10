@@ -1,0 +1,66 @@
+/* Basic reset for padding, margin, and box-sizing */
+
+  
+  /* Styles for the navigation bar */
+  nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Positions title on the left and links on the right */
+    flex-wrap: wrap; /* Allows wrapping of items on smaller screens */
+  }
+  
+  /* Styles for the main title */
+  nav h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  nav h1 a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Container for login/signup links */
+  nav div {
+    display: flex;
+    gap: 20px; /* Adds space between the links */
+  }
+  
+  /* Styles for navigation links */
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  /* Highlight the active link */
+  nav a.active {
+    color: #ffcc00;
+  }
+  
+  /* Change the color on hover */
+  nav a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column; /* Stacks items vertically on smaller screens */
+      align-items: flex-start; /* Aligns items to the left */
+    }
+  
+    nav div {
+      flex-direction: column; /* Stacks links vertically */
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    nav a {
+      margin: 5px 0; /* Adds space between links on smaller screens */
+    }
+  }
+  
