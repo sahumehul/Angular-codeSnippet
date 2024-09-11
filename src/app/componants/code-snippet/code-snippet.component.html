@@ -1,0 +1,17 @@
+<div class="form-container">
+    <form [formGroup]="codeForm" class="wrapper-code">
+        <div class="header">
+            <h1>Create Code Here</h1>
+        </div>
+        <div class="codesnippet">
+            <input type="text" [formControl]="title" placeholder="Title">
+            <div class="red-error" [hidden]="title.valid || title.untouched">Title is required</div>
+            <br/>
+            <textarea type="text" [formControl]="code" placeholder="Enter Your code Here"></textarea>
+            <div class="red-error" [hidden]="code.valid || code.untouched">Code Snippet should not be empty</div>
+            <br/>
+            <button (click)="save()" [disabled]="codeForm.invalid">Create</button>
+        </div>
+    </form>
+    
+</div>
