@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DbService } from '../../services/db.service';
+import { Snippet } from '../../../model/model';
 
 @Component({
   selector: 'app-code-snippet',
@@ -9,6 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './code-snippet.component.css'
 })
 export class CodeSnippetComponent {
+  constructor(private dbService:DbService){}
 
   title = new FormControl("",[Validators.required])
   code = new FormControl("",[Validators.required])
@@ -18,7 +21,7 @@ export class CodeSnippetComponent {
   })
 
   save(){
-    console.log(this.codeForm.value);
+    return this.dbService.createSnippet(this.codeForm.value as Snippet)
     
   }
 }

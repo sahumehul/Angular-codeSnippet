@@ -1,0 +1,1 @@
+export type Snippet = {tittle: string, code: string}
