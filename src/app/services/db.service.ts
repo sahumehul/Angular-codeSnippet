@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDoc, getDocs, getFirestore,doc } from "firebase/firestore";
 import { Snippet } from '../../model/model';
 import { AuthService } from './auth.service';
 
@@ -27,7 +27,32 @@ export class DbService {
     }
    }
 
-   async getCode(){
-    
+   async getAllCode(){
+    let result:any[] = [];
+    const querySnap = await getDocs(collection(this.db, "snippet"))
+    querySnap.forEach((doc)=>{
+      
+      result.push({id:doc.id,...doc.data()})
+      
+    }) 
+    return result
+   }
+
+   async getCodeById(docId : string){
+    const docRef = doc(this.db, "snippet",docId);
+    const docSnap = await getDoc(docRef);
+
+    if(docSnap.exists()){
+      console.log("Doc data", docSnap.data());
+      return docSnap.data();
+      
+    }else{
+      return {
+        id:"",
+        title : "Not found",
+        code:"Not found"
+      }
+    }
+
    }
 }
