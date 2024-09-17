@@ -2,10 +2,11 @@
     <nav>
         <h1><a routerLink="/">CodeSnippet</a></h1>
         <div>
-            <a routerLink="/codesnippet" routerLinkActive="active">Create Code</a>
+            
             @if(authService.isAuthenticated()){
                 <a (click)="authService.logout()">logout</a>
             }@else {
+                <a routerLink="/codesnippet" routerLinkActive="active">Create Code</a>
                 <a routerLink="/login" routerLinkActive="active">login</a>
             <a routerLink="/signup" routerLinkActive="active">Signup</a>
             }

@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { addDoc, collection, getDoc, getDocs, getFirestore,doc } from "firebase/firestore";
 import { Snippet } from '../../model/model';
 import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbService {
   private db? : any
-  constructor(private authService : AuthService) {
+  constructor(private authService : AuthService,private router: Router) {
     this.db = getFirestore()
    }
 
@@ -19,7 +20,7 @@ export class DbService {
         by : this.authService.getId()
       })
       console.log("document written in", docRef.id);
-      
+      this.router.navigate(["/"])
     }catch(e){
       console.log(e);
       

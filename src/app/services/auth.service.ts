@@ -35,7 +35,7 @@ export class AuthService {
     createUserWithEmailAndPassword(auth, email, password).then((credentials)=>{
       const user = credentials.user
       console.log({user});
-      this.router.navigate(['/'])
+      this.router.navigate(['/login'])
       
     }).catch((error)=>{
       console.log(error.message);
@@ -61,6 +61,7 @@ export class AuthService {
     const auth = getAuth()
     signOut(auth).then((user)=>{
       console.log(this.uid);
+      this.router.navigate(["/login"])
       
     }).catch((error)=>{
       console.log("Error while logging out");

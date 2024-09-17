@@ -1,69 +1,67 @@
-ul {
-    list-style-type: none;
-    padding: 20px;
-    margin-top: 200px;
+/* Base styles */
+div {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    max-width: 1200px;
-    margin: auto;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* List items styling */
-li {
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    height: 93.2vh;
+    padding: 20px;
+    background-color: #49646b;
 }
 
-li:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
+h5 {
+    font-size: 18px;
+    color: #999;
+    text-align: center;
 }
 
-/* Link styling */
+/* Link styles */
 a {
+    display: inline-block;
+    margin: 15px 0; /* Increased margin for more spacing */
+    padding: 20px 40px; /* Increased padding for larger box */
+    border-radius: 12px; /* Increased radius for a smoother look */
     text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-li:hover a {
-    color: white;
+    color: #fff; /* White text for better contrast */
+    font-weight: 600;
+    font-size: 18px; /* Larger font size */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+    width: 100%;
+    text-align: center;
+    max-width: 1500px; /* Limit max width */
+    background-image: linear-gradient(135deg, #6a5acd, #483d8b);/* Same gradient color for all links */
 }
 
 a:hover {
-    text-decoration: underline;
+    background-color: transparent;
+    color: #fff;
+    transform: translateY(-8px); /* Lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-/* Responsive design */
-@media (min-width: 600px) {
-    ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+a:active {
+    transform: scale(0.95);
+}
 
-    li {
-        flex: 1 1 calc(50% - 20px); /* Two columns */
-        margin: 10px;
+/* Responsive layout for mobile-first */
+@media (max-width: 768px) {
+    a {
+        width: 100%; /* Full width on smaller screens */
+        padding: 25px;
+        font-size: 18px;
     }
 }
 
-@media (min-width: 900px) {
-    li {
-        flex: 1 1 calc(33.333% - 20px); /* Three columns */
+/* Tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+    a {
+        width: 90%; /* Slightly reduced width for tablet */
+    }
+}
+
+/* Desktop view */
+@media (min-width: 1025px) {
+    a {
+        width: 80%; /* 80% width for desktop views */
     }
 }

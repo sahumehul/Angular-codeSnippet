@@ -1,10 +1,10 @@
 <div>
-    <ul>
+   
         @if(items.length === 0){
-            <li>No data found</li>
+            <h5>No data found</h5>
         }
         @for(item of items; track item.id){
-            <li><a [routerLink]="['/viewSnippet',item.id]">{{item.title}}</a></li>
+            <a [routerLink]="['/viewSnippet',item.id]">{{item.title}}</a>
         }
-    </ul>
+    
 </div>

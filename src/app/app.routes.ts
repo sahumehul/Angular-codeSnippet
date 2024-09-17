@@ -13,7 +13,7 @@ export const routes: Routes = [
     {path : "codesnippet", component :CodeSnippetComponent,canActivate :[authGuard]},
     {path : "about", loadComponent: ()=> import("./componants/about/about.component").then(mod=> mod.AboutComponent)},
     {path: "",component: HomeComponent},
-    {path: "viewSnippet", component: ViewSnippetComponent},
+    {path: "viewSnippet/:id", component: ViewSnippetComponent},
     {path:"**",component:NotFoundComponent}
 
 ];

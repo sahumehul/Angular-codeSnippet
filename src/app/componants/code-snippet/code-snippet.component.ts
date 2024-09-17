@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { DbService } from '../../services/db.service';
 import { Snippet } from '../../../model/model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-code-snippet',
