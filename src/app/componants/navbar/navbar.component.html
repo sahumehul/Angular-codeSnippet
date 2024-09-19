@@ -4,9 +4,10 @@
         <div>
             
             @if(authService.isAuthenticated()){
+                <a routerLink="/codesnippet" routerLinkActive="active">Create Code</a>
                 <a (click)="authService.logout()">logout</a>
             }@else {
-                <a routerLink="/codesnippet" routerLinkActive="active">Create Code</a>
+                
                 <a routerLink="/login" routerLinkActive="active">login</a>
             <a routerLink="/signup" routerLinkActive="active">Signup</a>
             }
@@ -16,3 +17,19 @@
         </div>
     </nav>
 </div>
+
+
+<!-- <nav>
+    <h1>
+      <a routerLink="/">CodeSnippet</a>
+    </h1>
+    <div class="menu-icon" (click)="toggleMenu()">☰</div>
+    <div [ngClass]="{'menu-open': isMenuOpen}">
+      <a *ngIf="authService.isAuthenticated()" routerLink="/codesnippet" routerLinkActive="active">Create Code</a>
+      <a *ngIf="authService.isAuthenticated()" (click)="authService.logout()">Logout</a>
+      <a *ngIf="!authService.isAuthenticated()" routerLink="/login" routerLinkActive="active">Login</a>
+      <a *ngIf="!authService.isAuthenticated()" routerLink="/signup" routerLinkActive="active">Signup</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+    </div>
+  </nav> -->
+  
