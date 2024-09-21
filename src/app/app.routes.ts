@@ -6,10 +6,12 @@ import { CodeSnippetComponent } from './componants/code-snippet/code-snippet.com
 import { authGuard } from './auth.guard';
 import { HomeComponent } from './componants/home/home.component';
 import { ViewSnippetComponent } from './componants/view-snippet/view-snippet.component';
+import { SampleComponent } from './componants/sample/sample.component';
 
 export const routes: Routes = [
     {path : "login", component :LoginComponent},
     {path : "signup", component :SignupComponent},
+    {path : "sample", component :SampleComponent},
     {path : "codesnippet", component :CodeSnippetComponent,canActivate :[authGuard]},
     {path : "about", loadComponent: ()=> import("./componants/about/about.component").then(mod=> mod.AboutComponent)},
     {path: "",component: HomeComponent},
