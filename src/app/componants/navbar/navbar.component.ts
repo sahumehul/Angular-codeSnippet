@@ -13,11 +13,16 @@ import { NgClass } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isMenuOpen: boolean = false;
+  menuValue: boolean = false;
+  menu_icon : string = "bi bi-list"
+
+  
 
   constructor(public authService: AuthService) {}
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+  openMenu(){
+    this.menuValue = !this.menuValue
+    this.menu_icon = this.menuValue ? "bi bi-x" : "bi bi-list"
   }
+  
 }

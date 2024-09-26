@@ -21,9 +21,45 @@ header{
 }
 
 .desktop-menu ul li:hover{
-  font-size: 19px;
-  /* font-weight: bold; */
+  /* font-size: 19px; */
+  font-weight: bold;
   cursor: pointer;
   color: yellowgreen;
-  /* transition: 0.4s ease-in-out; */
+  transition: 0.4s ease-in-out;
+}
+
+.menu-btn{
+  display: none;
+}
+
+@media screen and (min-width : 128px) and (max-width:900px) {
+  .desktop-menu{
+    position: fixed;
+    right: -280px;
+    top: 100px;
+    background: #02534d;
+    width: 200px;
+    height: 100%;
+    transition: 0.4s ease-in-out;
+  }
+
+  .desktop-menu ul li{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0;
+    padding: 10px 0px 10px 26px;
+    border-bottom: 1px solid grey;
+  }
+
+  .menu-btn{
+    display: block;
+    font-size: 40px;
+    color: aliceblue;
+    padding: 10px;
+  }
+  .mobile-menu{
+    right: 0;
+    transition: 0.4s ease-in-out;
+  }
 }

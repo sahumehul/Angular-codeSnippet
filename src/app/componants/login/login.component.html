@@ -5,7 +5,7 @@
             <input type="text" [formControl]="email" placeholder="Enter email">
             <p class="error-red" [hidden]= "email.valid || email.untouched">Enter valid Email</p>
             <input type="password" [formControl]="password" placeholder="Enter password">
-            <p class="error-red" [hidden] = "password.valid || password.untouched">Enter valid password</p>
+            <p class="error-red" [hidden] = "password.valid || password.untouched">Password length should be greater than 6</p>
         </div>
         <div class="btns">
             <button (click)="loginBtn()" [disabled]="loginForm.invalid">Login</button>
