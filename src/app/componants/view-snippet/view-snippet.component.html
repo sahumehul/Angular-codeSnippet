@@ -1,6 +1,12 @@
-<div class="wrapper">
-    <div class="codeSnippet">
-        <h3>{{codeSnippet.title}}</h3>
-        <pre>{{codeSnippet.code}}</pre>
+@if(isLoading){
+    <div class="spinner">
+        <app-spinner></app-spinner>
     </div>
-</div>
+}@else {
+    <div class="wrapper">
+        <div class="codeSnippet">
+            <h3>{{codeSnippet.title}}</h3>
+            <pre>{{codeSnippet.code}}</pre>
+        </div>
+    </div>
+}

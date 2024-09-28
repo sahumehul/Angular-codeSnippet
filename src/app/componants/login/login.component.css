@@ -1,3 +1,11 @@
+
+.spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90.1vh;
+    z-index: 1300;
+}
 /* General styles for the wrapper */
 .wrapper {
     display: flex;

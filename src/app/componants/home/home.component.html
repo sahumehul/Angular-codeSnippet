@@ -1,4 +1,9 @@
-<div>
+@if(isLoading){
+    <div class="spinner">
+        <app-spinner></app-spinner>
+    </div>
+}@else {
+    <div class="home">
    
         @if(items.length === 0){
             <h5>No data found</h5>
@@ -8,3 +13,4 @@
         }
     
 </div>
+}

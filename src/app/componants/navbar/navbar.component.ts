@@ -15,10 +15,15 @@ import { NgClass } from '@angular/common';
 export class NavbarComponent {
   menuValue: boolean = false;
   menu_icon : string = "bi bi-list"
-
+  isLoader = true
   
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService) {
+    setTimeout(()=>{
+      this.isLoader = false
+
+    })
+  }
 
   openMenu(){
     this.menuValue = !this.menuValue

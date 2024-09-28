@@ -1,16 +1,22 @@
 import { Component } from '@angular/core';
 import { DbService } from '../../services/db.service';
 import { RouterLink } from '@angular/router';
+import { SpinnerComponent } from "../spinner/spinner.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SpinnerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private dbService:DbService){}
+  isLoading = true;
+  constructor(private dbService:DbService){
+    setTimeout(()=>{
+      this.isLoading = false
+    })
+  }
 
   items : {id:string, title:string}[] = []
   ngOnInit(){

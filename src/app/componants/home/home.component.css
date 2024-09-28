@@ -1,9 +1,16 @@
 /* Base styles */
-div {
+.spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90.1vh;
+    z-index: 1300;
+}
+.home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90.2vh;
+    height: 100%;
     padding: 20px;
     background-color: #49646b;
 }
